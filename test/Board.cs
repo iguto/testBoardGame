@@ -15,10 +15,6 @@ namespace test {
 
       CreateEmptyCells();
       PlaceStonesAtInitialize();
-
-      Console.WriteLine("[Board] created");
-      Console.WriteLine("  board Size:" + this.Size);
-      Console.WriteLine("  board first cell:" + this.cells[4, 0]);
     }
 
     private void PlaceStonesAtInitialize() {
@@ -37,7 +33,6 @@ namespace test {
     }
 
     public void Display() {
-      Console.WriteLine("[Board]: display");
       DisplayRowLine();
       for (int i = 0; i < this.Size; i++) {
         Console.Write("｜");

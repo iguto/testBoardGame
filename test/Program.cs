@@ -11,9 +11,7 @@ namespace test
         static void Main(string[] args)
         {
           Board board = new Board(8);
-          Console.WriteLine("[Program]: board:" + board.Size);
           board.Display();
-          Console.WriteLine(Stone.Type.Black);
         }
     }
 }
