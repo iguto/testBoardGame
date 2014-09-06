@@ -18,11 +18,10 @@ namespace test
       Console.WriteLine("[Board] created");
       Console.WriteLine("  board Size:" + this.Size);
       Console.WriteLine("  board cells:" + this.cells.Length);
-      Console.WriteLine("  board first cell:" + this.cells[5,0]);
+      Console.WriteLine("  board first cell:" + this.cells[4,0]);
     }
     public void Display() {
       Console.WriteLine("[Board]: display");
-      
     }
   }
 }
