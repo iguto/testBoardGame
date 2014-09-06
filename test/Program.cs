@@ -13,6 +13,7 @@ namespace test
           Board board = new Board(5);
           Console.WriteLine("[Program]: board:" + board.Size);
           board.Display();
+          Console.WriteLine(Stone.Type.Black);
         }
     }
 }
