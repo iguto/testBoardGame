@@ -35,7 +35,7 @@ namespace test {
     }
 
     public void Display() {
-      DisplayRowLine();
+      DisplayLineRow();
       foreach (var row in this.cells) {
         DisplayStoneRow(row);
       }
@@ -47,10 +47,10 @@ namespace test {
         Console.Write(stone.ConsoleFormat() + "｜");
       }
       Console.WriteLine();
-      DisplayRowLine();
+      DisplayLineRow();
     }
 
-    private void DisplayRowLine() {
+    private void DisplayLineRow() {
       Console.WriteLine(new String('-', this.Size * 4 + 2));
     }
   }
