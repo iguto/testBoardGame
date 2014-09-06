@@ -14,15 +14,18 @@ namespace test {
       this.cells = new Stone[size, size];
 
       CreateEmptyCells();
-
-      this.cells[this.Size / 2, this.Size / 2] = new Stone(Stone.Type.Black);
-      this.cells[this.Size / 2 - 1, this.Size / 2 - 1] = new Stone(Stone.Type.Black);
-      this.cells[this.Size / 2 - 1, this.Size / 2] = new Stone(Stone.Type.White);
-      this.cells[this.Size / 2, this.Size / 2 - 1] = new Stone(Stone.Type.White);
+      PlaceStonesAtInitialize();
 
       Console.WriteLine("[Board] created");
       Console.WriteLine("  board Size:" + this.Size);
       Console.WriteLine("  board first cell:" + this.cells[4, 0]);
+    }
+
+    private void PlaceStonesAtInitialize() {
+      this.cells[this.Size / 2, this.Size / 2] = new Stone(Stone.Type.Black);
+      this.cells[this.Size / 2 - 1, this.Size / 2 - 1] = new Stone(Stone.Type.Black);
+      this.cells[this.Size / 2 - 1, this.Size / 2] = new Stone(Stone.Type.White);
+      this.cells[this.Size / 2, this.Size / 2 - 1] = new Stone(Stone.Type.White);
     }
 
     private void CreateEmptyCells() {
