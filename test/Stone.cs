@@ -14,5 +14,20 @@ namespace test
       White,
       Black,
     }
+    private Type state = Type.Empty;
+    
+    public Stone() { }
+
+    public Boolean isEmpty() {
+      return this.state == Type.Empty;
+    }
+    public Boolean isWhite()
+    {
+      return this.state == Type.White;
+    }
+    public Boolean isBlack()
+    {
+      return this.state == Type.Black;
+    }
   }
 }
