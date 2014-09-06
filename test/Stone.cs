@@ -14,9 +14,11 @@ namespace test
       White,
       Black,
     }
-    public Type state = Type.Empty;
+    public Type state;
     
-    public Stone() { }
+    public Stone(Type type = Type.Empty) {
+      this.state = type;
+    }
 
     public String ConsoleFormat() {
       if (isWhite()) { return "●"; }
