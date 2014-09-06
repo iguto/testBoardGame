@@ -12,7 +12,7 @@ namespace test
         {
           Board board = new Board(5);
           Console.WriteLine("[Program]: board:" + board.Size);
-          Console.ReadKey();
+          board.Display();
         }
     }
 }
