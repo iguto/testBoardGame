@@ -35,14 +35,17 @@ namespace test {
     }
 
     public void Display() {
+      int stonesIndex = 1;
+
       DisplayLineRow();
       foreach (var row in this.cells) {
-        DisplayStoneRow(row);
+        DisplayStoneRow(row, stonesIndex);
+        stonesIndex += 1;
       }
     }
 
-    private void DisplayStoneRow(Stone[] stones) {
-      Console.Write("｜");
+    private void DisplayStoneRow(Stone[] stones, int index) {
+      Console.Write("{0}｜", index);
       foreach (var stone in stones) {
         Console.Write(stone.ConsoleFormat() + "｜");
       }
@@ -51,6 +54,7 @@ namespace test {
     }
 
     private void DisplayLineRow() {
+      Console.Write(" ");
       Console.WriteLine(new String('-', this.Size * 4 + 2));
     }
   }
