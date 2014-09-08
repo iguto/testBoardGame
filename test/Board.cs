@@ -24,6 +24,29 @@ namespace test {
       return board;
     }
 
+    public Boolean PutStone(Dictionary<string, int> pos) {
+      var adjustedPos = AdjustStonePos(pos);
+      if (!IsPuttableStone(adjustedPos)) { return false; }
+      this.cells[adjustedPos["y"]][adjustedPos["x"]] = new Stone(Stone.Type.Black);
+      return true;
+    }
+
+    private Boolean IsPuttableStone(Dictionary<string, int> pos) {
+      var stone = GetStone(pos);
+      if (stone.isEmpty()) { return true; }
+      return false;
+    }
+
+    private Stone GetStone(Dictionary<string, int> pos) {
+      return this.cells[pos["y"]][pos["x"]];
+    }
+
+    private Dictionary<string, int> AdjustStonePos(Dictionary<string, int> pos) {
+      pos["x"] -= 1;
+      pos["y"] -= 1;
+      return pos;
+    }
+
     private void PlaceStonesAtInitialize() {
       this.cells[this.Size / 2][this.Size / 2] = new Stone(Stone.Type.Black);
       this.cells[this.Size / 2 - 1][this.Size / 2 - 1] = new Stone(Stone.Type.Black);
