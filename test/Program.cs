@@ -10,8 +10,12 @@ namespace test
     {
         static void Main(string[] args)
         {
-          Board board = new Board(8);
-          board.Display();
+          Turn turn;
+          while (true) {
+            turn = new Turn();
+            turn.execute();
+            if (turn.IsGameEnd()) { break; }
+          }
         }
     }
 }

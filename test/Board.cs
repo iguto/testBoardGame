@@ -8,13 +8,20 @@ namespace test {
   class Board {
     public int Size { get; set; }
     private Stone[][] cells;
+
+    private static Board board = new Board(8);
+
     // constructor
-    public Board(int size) {
+    private Board(int size) {
       this.Size = size;
       this.cells = new Stone[this.Size][];
 
       CreateEmptyCells();
       PlaceStonesAtInitialize();
+    }
+
+    public static Board GetInstance() {
+      return board;
     }
 
     private void PlaceStonesAtInitialize() {
@@ -36,12 +43,20 @@ namespace test {
 
     public void Display() {
       int stonesIndex = 1;
-
+      DisplayColumnNumberLine(this.Size);
       DisplayLineRow();
       foreach (var row in this.cells) {
         DisplayStoneRow(row, stonesIndex);
         stonesIndex += 1;
       }
+    }
+
+    private void DisplayColumnNumberLine(int column) {
+      Console.Write(" ");
+      for (int i = 0; i < column; i++) {
+        Console.Write("{0, 4}", i + 1);
+      }
+      Console.WriteLine();
     }
 
     private void DisplayStoneRow(Stone[] stones, int index) {
