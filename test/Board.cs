@@ -26,27 +26,21 @@ namespace test {
       return board;
     }
 
-    public Boolean PutStone(Dictionary<string, int> pos) {
-      var adjustedPos = AdjustStonePos(pos);
-      if (!IsPuttableStone(adjustedPos)) { return false; }
-      this.cells[adjustedPos["y"]][adjustedPos["x"]] = new Stone(Stone.Type.Black);
+    public Boolean PutStone(Position pos) {
+      pos.AdjustStonePos();
+      if (!IsPuttableStone(pos)) { return false; }
+      this.cells[pos.Y][pos.X] = new Stone(Stone.Type.Black);
       return true;
     }
 
-    private Boolean IsPuttableStone(Dictionary<string, int> pos) {
+    private Boolean IsPuttableStone(Position pos) {
       var stone = GetStone(pos);
       if (stone.isEmpty()) { return true; }
       return false;
     }
 
-    private Stone GetStone(Dictionary<string, int> pos) {
-      return this.cells[pos["y"]][pos["x"]];
-    }
-
-    private Dictionary<string, int> AdjustStonePos(Dictionary<string, int> pos) {
-      pos["x"] -= 1;
-      pos["y"] -= 1;
-      return pos;
+    private Stone GetStone(Position pos) {
+      return this.cells[pos.Y][pos.X];
     }
 
     private void PlaceStonesAtInitialize() {

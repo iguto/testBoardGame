@@ -20,21 +20,11 @@ namespace test {
         rawInput = Console.ReadLine();
         if (rawInput.Length != 0) { break; }
       }
-      var pos = ParseInput(rawInput);
+      var pos = Position.Parse(rawInput);
       var result = board.PutStone(pos);
       Console.WriteLine(result.ToString());
       
     }
     public Boolean IsGameEnd() { return false; }
-
-    private Dictionary<string, int> ParseInput(string input) {
-      // TODO: fix error when input is not expected format
-      var parsed = new Dictionary<string, int>();
-      string[] inputs = input.Split(' ');
-      int[] parsedInput = inputs.Select(i => int.Parse(i)).ToArray();
-      parsed.Add("y", parsedInput[0]);
-      parsed.Add("x", parsedInput[1]);
-      return parsed;
-    }
   }
 }
