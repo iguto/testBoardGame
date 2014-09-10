@@ -18,12 +18,11 @@ namespace test {
       while (true) {
         Console.Write("○の番です｡ 石を置くマスを指定してください｡ (例:1 3): ");
         rawInput = Console.ReadLine();
-        if (rawInput.Length != 0) { break; }
-      }
-      var pos = Position.Parse(rawInput);
-      var result = board.PutStone(pos);
-      Console.WriteLine(result.ToString());
-      
+        if (rawInput.Length == 0) { continue; }
+        var pos = Position.Parse(rawInput);
+        var result = board.PutStone(pos);
+        if (result) { break; }
+      }    
     }
     public Boolean IsGameEnd() { return false; }
   }
