@@ -11,6 +11,7 @@ namespace test {
     public Turn() {
       this.board = Board.GetInstance();
     }
+
     public void execute(){
       Console.WriteLine();
       this.board.Display();
@@ -24,6 +25,7 @@ namespace test {
         result = board.PutStone(pos);
       }
     }
+
     public Boolean IsGameEnd() { return false; }
   }
 }
