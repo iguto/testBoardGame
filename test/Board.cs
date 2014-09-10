@@ -9,7 +9,7 @@ namespace test {
     public int Size { get; set; }
     private Stone[][] cells;
 
-    private Board board = new Board(8);
+    private static Board board = new Board(8);
 
     // constructor
     private Board(int size) {
