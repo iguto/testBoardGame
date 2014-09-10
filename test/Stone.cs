@@ -26,6 +26,10 @@ namespace test
       return "  ";
     }
 
+    public static List<Type> PlayerStones() {
+      return new List<Type>() { Type.Black, Type.White };
+    }
+
     public Boolean isEmpty() {
       return this.state == Type.Empty;
     }

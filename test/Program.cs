@@ -10,11 +10,13 @@ namespace test
     {
         static void Main(string[] args)
         {
-          Turn turn;
-          while (true) {
-            turn = new Turn();
-            turn.execute();
-            if (turn.IsGameEnd()) { break; }
+          PlayerQueue pq = new PlayerQueue("プレイヤー1", "プレイヤー2");
+
+          foreach (var player in pq.Players) {
+            player.Play();
+          }
+          foreach (var player in pq.Players) {
+            player.Play();
           }
         }
     }

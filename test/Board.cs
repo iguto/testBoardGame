@@ -13,7 +13,6 @@ namespace test {
 
     private static Board board = new Board(8);
 
-    // constructor
     private Board(int size) {
       this.size = size;
       this.cells = new Stone[this.size][];
@@ -26,10 +25,10 @@ namespace test {
       return board;
     }
 
-    public Boolean PutStone(Position pos) {
+    public Boolean PutStone(Position pos, Stone.Type stoneType) {
       pos.AdjustStonePos();
       if (!IsPuttableStone(pos)) { return false; }
-      this.cells[pos.Y][pos.X] = new Stone(Stone.Type.Black);
+      this.cells[pos.Y][pos.X] = new Stone(stoneType);
       return true;
     }
 
